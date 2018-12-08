@@ -1,6 +1,21 @@
 {
   "name": "express-simple-sitemap",
   "version": "1.0.0",
+  "description": "The simplest way to add a sitemap to an express application",
+  "keywords": [
+    "sitemap",
+    "sitemap xml",
+    "express",
+    "expressjs",
+    "middleware"
+  ],
   "main": "index.js",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jenbuzz/express-simple-sitemap"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  }
 }
