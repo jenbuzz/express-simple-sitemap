@@ -1,6 +1,6 @@
 'use strict';
 
-const sitemap = (options) => {
+const sitemap = options => {
     const sitemapUrl = options && options.sitemapUrl ? options.sitemapUrl : '/sitemap.xml';
     const urls = options && options.urls ? options.urls : [];
 
@@ -33,7 +33,7 @@ const sitemap = (options) => {
         }
 
         next();
-    }
-}
+    };
+};
 
 module.exports = sitemap;

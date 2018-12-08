@@ -20,7 +20,7 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "xo"
+    "lint": "xo index.js"
   },
   "devDependencies": {
     "express": "^4.16.4",

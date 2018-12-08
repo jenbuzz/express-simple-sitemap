@@ -15,7 +15,7 @@ test('get sitemap from request', () => {
         url: '/sitemap.xml',
     });
 
-    var response = httpMocks.createResponse();
+    const response = httpMocks.createResponse();
 
     sitemap()(request, response, () => {});
 
