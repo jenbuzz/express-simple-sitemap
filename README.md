@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/jenbuzz/express-simple-sitemap.png?branch=master)](http://travis-ci.org/jenbuzz/express-simple-sitemap) [![Coverage Status](https://coveralls.io/repos/github/jenbuzz/express-simple-sitemap/badge.svg?branch=master)](https://coveralls.io/github/jenbuzz/express-simple-sitemap?branch=master)
+
 # express-simple-sitemap
 The simplest way to add a sitemap to an express application.
 
