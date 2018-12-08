@@ -20,9 +20,11 @@
   },
   "scripts": {
     "test": "jest",
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "lint": "xo index.js"
   },
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "express": "^4.16.4",
     "jest": "^23.6.0",
     "node-mocks-http": "^1.7.3",
