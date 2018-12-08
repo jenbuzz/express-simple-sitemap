@@ -17,5 +17,13 @@
   "license": "MIT",
   "engines": {
     "node": ">=8"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "node-mocks-http": "^1.7.3"
   }
 }
