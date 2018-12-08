@@ -1,3 +1,5 @@
+import { Response, Request } from 'express';
+
 export interface SitemapUrl {
     url: string;
     lastmod?: string;
@@ -17,4 +19,4 @@ export interface SitemapOptions {
  * @param options containing sitemapUrl and urls.
  * @returns express middleware function.
  */
-export default function sitemap(options?: SitemapOptions): (req, res, next) => void;
+export default function sitemap(options?: SitemapOptions): (req: Request, res: Response, next: () => void) => void;
