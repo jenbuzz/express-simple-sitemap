@@ -47,14 +47,12 @@ test('get filled sitemap from request', () => {
     expect(response._getData()).toBe(
 `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    
 <url>
     <loc>https://github.com/jenbuzz</loc>
     <lastmod>2018-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1</priority>
 </url>
-    
 </urlset>`
     );
 });
@@ -104,42 +102,28 @@ test('get filled sitemap with partly url objects from request', () => {
     expect(response._getData()).toBe(
 `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    
 <url>
     <loc>https://github.com/jenbuzz</loc>
-    
-    
-    
 </url>
-    
 <url>
     <loc>https://github.com/jenbuzz</loc>
     <lastmod>2018-12-08</lastmod>
-    
-    
 </url>
-    
 <url>
     <loc>https://github.com/jenbuzz</loc>
     <lastmod>2018-12-08</lastmod>
     <changefreq>always</changefreq>
-    
 </url>
-    
 <url>
     <loc>https://github.com/jenbuzz</loc>
-    
-    
     <priority>0.5</priority>
 </url>
-    
 <url>
     <loc>https://github.com/jenbuzz</loc>
     <lastmod>2018-12-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
 </url>
-    
 </urlset>`
     );
 });

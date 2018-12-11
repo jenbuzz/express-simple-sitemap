@@ -40,21 +40,35 @@ const sitemap = options => {
 };
 
 const getUrl = (url, lastMod, changeFreq, priority) => {
-    return `
+    let result = `
 <url>
-    ${url}
-    ${lastMod}
-    ${changeFreq}
-    ${priority}
-</url>
-    `;
+    ${url}`;
+
+    if (lastMod) {
+    result += `
+    ${lastMod}`;
+    }
+
+    if (changeFreq) {
+    result += `
+    ${changeFreq}`;
+    }
+
+    if (priority) {
+    result += `
+    ${priority}`;
+    }
+
+    result += `
+</url>`;
+
+    return result;
 };
 
 const getXml = (urls) => {
     return `
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    ${urls}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}
 </urlset>
     `.trim();
 };
