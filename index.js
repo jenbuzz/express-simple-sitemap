@@ -7,7 +7,7 @@ const validChangeFreq = [
     'weekly',
     'monthly',
     'yearly',
-    'never',
+    'never'
 ];
 
 const sitemap = options => {
@@ -45,17 +45,17 @@ const getUrl = (url, lastMod, changeFreq, priority) => {
     ${url}`;
 
     if (lastMod) {
-    result += `
+        result += `
     ${lastMod}`;
     }
 
     if (changeFreq) {
-    result += `
+        result += `
     ${changeFreq}`;
     }
 
     if (priority) {
-    result += `
+        result += `
     ${priority}`;
     }
 
@@ -65,7 +65,7 @@ const getUrl = (url, lastMod, changeFreq, priority) => {
     return result;
 };
 
-const getXml = (urls) => {
+const getXml = urls => {
     return `
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}
