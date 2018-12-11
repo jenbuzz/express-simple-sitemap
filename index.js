@@ -74,3 +74,5 @@ const getXml = urls => {
 };
 
 module.exports = sitemap;
+
+module.exports.default = module.exports;
