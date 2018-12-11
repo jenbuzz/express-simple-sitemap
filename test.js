@@ -87,6 +87,11 @@ test('get filled sitemap with partly url objects from request', () => {
                 changefreq: 'daily',
                 priority: 0,
             },
+            {
+                lastmod: '2018-12-08',
+                changefreq: 'daily',
+                priority: 0,
+            },
         ],
     })(request, response, () => {});
 
