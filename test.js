@@ -79,7 +79,11 @@ test('get filled sitemap with partly url objects from request', () => {
             {
                 url: 'https://github.com/jenbuzz',
                 lastmod: '2018-12-08',
-                changefreq: 'daily',
+                changefreq: 'always',
+            },
+            {
+                url: 'https://github.com/jenbuzz',
+                priority: 0.5,
             },
             {
                 url: 'https://github.com/jenbuzz',
@@ -118,8 +122,15 @@ test('get filled sitemap with partly url objects from request', () => {
 <url>
     <loc>https://github.com/jenbuzz</loc>
     <lastmod>2018-12-08</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>always</changefreq>
     
+</url>
+    
+<url>
+    <loc>https://github.com/jenbuzz</loc>
+    
+    
+    <priority>0.5</priority>
 </url>
     
 <url>

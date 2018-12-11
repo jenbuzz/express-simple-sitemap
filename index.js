@@ -1,5 +1,15 @@
 'use strict';
 
+const validChangeFreq = [
+    'always',
+    'hourly',
+    'daily',
+    'weekly',
+    'monthly',
+    'yearly',
+    'never',
+];
+
 const sitemap = options => {
     const sitemapUrl = options && options.sitemapUrl ? options.sitemapUrl : '/sitemap.xml';
     const urls = options && options.urls ? options.urls : [];
@@ -10,10 +20,14 @@ const sitemap = options => {
 
             let xmlUrls = '';
             urls.forEach(url => {
-                const lineUrl = url.url ? `<loc>${url.url}</loc>` : '';
-                const lineLastMod = url.lastmod ? `<lastmod>${url.lastmod}</lastmod>` : '';
-                const lineChangeFreq = url.changefreq ? `<changefreq>${url.changefreq}</changefreq>` : '';
-                const linePriority = url.priority ? `<priority>${url.priority}</priority>` : '';
+                if (!('url' in url) || !url.url) {
+                    return;
+                }
+
+                const lineUrl = `<loc>${url.url}</loc>`;
+                const lineLastMod = 'lastmod' in url ? `<lastmod>${url.lastmod}</lastmod>` : '';
+                const lineChangeFreq = 'changefreq' in url && validChangeFreq.indexOf(url.changefreq) !== -1 ? `<changefreq>${url.changefreq}</changefreq>` : '';
+                const linePriority = 'priority' in url && url.priority >= 0 && url.priority <= 1 ? `<priority>${url.priority}</priority>` : '';
 
                 xmlUrls += getUrl(lineUrl, lineLastMod, lineChangeFreq, linePriority);
             });
