@@ -44,14 +44,17 @@ test('get filled sitemap from request', () => {
 
     expect(response.getHeader('Content-Type')).toEqual('application/xml');
 
-    expect(response._getData()).toBe(`<?xml version="1.0" encoding="UTF-8"?>
-                <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-                    <url>
-                        <loc>https://github.com/jenbuzz</loc>
-                        <lastmod>2018-12-08</lastmod>
-                        <changefreq>daily</changefreq>
-                        <priority>1</priority>
-                    </url>
-                </urlset>`
+    expect(response._getData()).toBe(
+`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+<url>
+    <loc>https://github.com/jenbuzz</loc>
+    <lastmod>2018-12-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1</priority>
+</url>
+    
+</urlset>`
     );
 });

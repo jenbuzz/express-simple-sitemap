@@ -15,25 +15,34 @@ const sitemap = options => {
                 const lineChangeFreq = url.changefreq ? `<changefreq>${url.changefreq}</changefreq>` : '';
                 const linePriority = url.priority ? `<priority>${url.priority}</priority>` : '';
 
-                xmlUrls += `
-                    <url>
-                        ${lineUrl}
-                        ${lineLastMod}
-                        ${lineChangeFreq}
-                        ${linePriority}
-                    </url>
-                `;
+                xmlUrls += getUrl(lineUrl, lineLastMod, lineChangeFreq, linePriority);
             });
 
-            res.send(`<?xml version="1.0" encoding="UTF-8"?>
-                <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-                    ${xmlUrls}
-                </urlset>
-            `);
+            res.send(getXml(xmlUrls));
         }
 
         next();
     };
+};
+
+const getUrl = (url, lastMod, changeFreq, priority) => {
+    return `
+<url>
+    ${url}
+    ${lastMod}
+    ${changeFreq}
+    ${priority}
+</url>
+    `;
+};
+
+const getXml = (urls) => {
+    return `
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    ${urls}
+</urlset>
+    `.trim();
 };
 
 module.exports = sitemap;
