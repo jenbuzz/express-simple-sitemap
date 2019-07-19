@@ -24,10 +24,10 @@
     "lint": "xo index.js"
   },
   "devDependencies": {
-    "coveralls": "^3.0.3",
-    "express": "^4.16.4",
-    "jest": "^24.1.0",
-    "node-mocks-http": "^1.7.3",
+    "coveralls": "^3.0.5",
+    "express": "^4.17.1",
+    "jest": "^24.8.0",
+    "node-mocks-http": "^1.7.6",
     "xo": "^0.24.0"
   },
   "xo": {
