@@ -9,6 +9,20 @@ test('add sitemap middleware to express application', () => {
     app.use(sitemap());
 });
 
+test('skip sitemap middleware', () => {
+    const request = httpMocks.createRequest({
+        method: 'GET',
+        url: '/',
+    });
+
+    const response = httpMocks.createResponse();
+
+    sitemap()(request, response, () => {});
+
+    expect(response._getData()).toEqual('');
+    expect(response.statusCode).toEqual(200);
+});
+
 test('get empty sitemap from request', () => {
     const request = httpMocks.createRequest({
         method: 'GET',
